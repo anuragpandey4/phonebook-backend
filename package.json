@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build:ui": "powershell -Command \"Remove-Item -Recurse -Force 'C:\\Users\\91934\\Desktop\\shit\\Full Stack Open\\part2\\phonebook\\dist'; cd 'C:\\Users\\91934\\Desktop\\shit\\Full Stack Open\\part2\\phonebook'; npm run build; xcopy 'C:\\Users\\91934\\Desktop\\shit\\Full Stack Open\\part2\\phonebook\\dist' 'C:\\Users\\91934\\Desktop\\FULL STACK OPEN BACKEND\\part3\\phonebook backend\\dist' /E /H /C /I\"",
+    "deploy:full": "powershell -Command \"npm run build:ui; cd 'C:\\Users\\91934\\Desktop\\FULL STACK OPEN BACKEND\\part3\\phonebook backend'; git add .; git commit -m 'uibuild'; git push\"",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
